@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Outcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/argon-design-system-free@1.2.0/assets/css/argon-design-system.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-body">
+                    <form action="">
+                        <input type="text" class="btn btn-dark text-white" name="about">
+                        <input type="date" class="btn btn-dark text-white" name="date">
+                        <select class="btn btn-dark" name="type" id="">
+                            <option value="">Income</option>
+                            <option value="">Outcome</option>
+                        </select>
+                        <input type="submit" value="Add" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card card-body mt-4">
+                   <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div class="">Mother give <br><small>11-11-23</small></div>
+                        <small class="text-success">+10000ks</small>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div class="">Mother give <br><small>11-11-23</small></div>
+                        <small class="text-success">+10000ks</small>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div class="">Mother give <br><small>11-11-23</small></div>
+                        <small class="text-danger">-10000ks</small>
+                    </li>
+                   </ul>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card card-body mt-4">
+                <div class="d-flex justify-content-between">
+                  <h5>Chart</h5>
+                 <div>
+                    <small class="text-success">Income : +5000</small>
+                    <small class="text-danger ml-2">Outcome : -1000</small>
+                 </div>
+                </div>
+                <hr class="p-0 m-0">
+                 <canvas class="mt-2" id="inout"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('inout');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: 'Income',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1,
+          backgroundColor: '#2DCE89'
+        },{
+          label: 'Outcome',
+          data: [16, 1, 3, 2, 6, 9],
+          borderWidth: 1,
+          backgroundColor: '#F5365C'
+        }
+    ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</html>
